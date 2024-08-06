@@ -59,11 +59,7 @@ app.post('/api/login', async (req, res) => {
           res.status(401).json({ status: 'User not found', status_code: 401 });
         } else {
           const user = rows[0];
-          console.log('Stored password:', user.password);
-          console.log('Provided password:', password);
           const passwordMatch = await bcrypt.compare(password.trim(), user.password);
-          console.log('Password match:', passwordMatch);
-  
           if (passwordMatch) {
             const token = jwt.sign({ user_id: user.user_id }, 'key', { expiresIn: '1h' });
             res.status(200).json({
@@ -82,9 +78,6 @@ app.post('/api/login', async (req, res) => {
       res.status(500).json({ message: 'Error during login' });
     }
   });
-
-
-  
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
