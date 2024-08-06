@@ -1,3 +1,15 @@
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
 ## API Endpoints
 
 ### Signup API
@@ -17,32 +29,5 @@
     "status": "Account successfully created",
     "status_code": 200,
     "user_id": "12345"
-  }
-  ```
-
-### Login API
-
-- **Endpoint**: `POST /api/login`
-- **Request Format**:
-  ```json
-  {
-    "username": "test",
-    "password": "12345678"
-  }
-  ```
-- **Response Format (Success)**:
-  ```json
-  {
-    "status": "Login successful",
-    "status_code": 200,
-    "user_id": "12345",
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
-  }
-  ```
-- **Response Format (Failure)**:
-  ```json
-  {
-    "status": "Incorrect username/password provided. Please retry",
-    "status_code": 401
   }
   ```
